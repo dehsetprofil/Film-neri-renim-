@@ -1,0 +1,158 @@
+/* style.css */
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+    font-family: 'Arial', sans-serif; /* You can replace this with a Google Font for a more modern feel */
+    background: linear-gradient(to bottom right, #282c34, #1c1f24);
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+/* Container Styles */
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+    position: relative;
+}
+
+/* Header Styles */
+header {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px 0; /* Increased padding */
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #ffcc00; /* Bright header color */
+}
+
+/* Navigation Styles */
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #ffcc00;
+}
+
+nav a::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: #ffcc00;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* Content Section Styles */
+.content-section,
+.recommendations,
+.movies-section,
+.settings-section {
+    display: none;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    transition: all 0.5s ease;
+    position: relative;
+}
+
+.content-section.active,
+.recommendations.active,
+.movies-section.active,
+.settings-section.active {
+    display: block;
+}
+
+/* Genre Selection Styles */
+.genre-select {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+}
+
+.genre-select label {
+    margin-bottom: 10px;
+}
+
+.genre-select select {
+    padding: 10px;
+    border: 1px solid #ffcc00;
+    border-radius: 5px;
+}
+
+/* Recommendation Button Styles */
+.recommend-button {
+    background: #ffcc00;
+    color: #1c1f24;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-top: 10px; /* Space above button */
+}
+
+.recommend-button:hover {
+    background: #ffd600;
+}
+
+/* Recommendations Display */
+.recommendations {
+    margin-top: 20px;
+}
+
+.welcome-image {
+    width: 100%;
+    border-radius: 8px;
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9em;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 600px) {
+    nav ul li {
+        display: block;
+        margin: 5px 0;
+    }
+}
