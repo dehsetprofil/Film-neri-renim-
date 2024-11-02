@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Film ve Dizi Öneri Botu</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Film ve Dizi Öneri Botu</h1>
+            <nav>
+                <ul>
+                    <li><a href="#" onclick="displayHome()">Ana Sayfa</a></li>
+                    <li><a href="#" onclick="displayRecommendations()">Öneri Al</a></li>
+                    <li><a href="#" onclick="displayWeeklyMovies()">Haftanın Filmleri</a></li>
+                    <li><a href="#" onclick="displayDailyMovies()">Günün Filmleri</a></li>
+                    <li><a href="#" onclick="displaySettings()">Ayarlar</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div id="home" class="content-section">
+            <h2>Hoş Geldiniz!</h2>
+            <p>Bu uygulama, istediğiniz türdeki filmleri ve dizileri keşfetmenize yardımcı olmak için tasarlandı.</p>
+            <p>Site sahibi: <strong>Burak Yüksel</strong></p>
+            <p>Amacımız, kullanıcılarımıza en iyi film önerilerini sunmaktır.</p>
+            <p>Hızlı ve kolay erişim ile, film önerileri almak için sadece birkaç tıklama yeter!</p>
+            <img src="welcome-image.jpg" alt="Hoş Geldiniz" class="welcome-image">
+        </div>
+
+        <div class="genre-select" id="genreSelectDiv" style="display:none;">
+            <h3>Öneri Al</h3>
+            <label for="genre">Tür Seç:</label>
+            <select id="genre">
+                <option value="aile">Aile</option>
+                <option value="aksiyon">Aksiyon</option>
+                <option value="romantik">Romantik</option>
+                <option value="komedi">Komedi</option>
+                <option value="drama">Drama</option>
+                <option value="animasyon">Animasyon</option>
+                <option value="macera">Macera</option>
+            </select>
+            <button class="recommend-button" onclick="getRecommendations()">Öneri Al</button>
+        </div>
+
+        <div id="recommendations" class="recommendations"></div>
+
+        <div id="weeklyMovies" class="movies-section" style="display:none;">
+            <h3>Haftanın Filmleri</h3>
+            <div id="weeklyMoviesList"></div>
+        </div>
+
+        <div id="dailyMovies" class="movies-section" style="display:none;">
+            <h3>Günün Filmleri</h3>
+            <div id="dailyMoviesList"></div>
+        </div>
+
+        <div id="settings" class="settings-section" style="display:none;">
+            <h3>Ayarlar</h3>
+            <p>Buradan uygulamanın ayarlarını yapabilirsiniz.</p>
+            <label for="theme">Tema Seç:</label>
+            <select id="theme">
+                <option value="light">Aydınlık</option>
+                <option value="dark">Karanlık</option>
+            </select>
+            <button onclick="saveSettings()">Ayarları Kaydet</button>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Film Önerim. Tüm hakları saklıdır.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
